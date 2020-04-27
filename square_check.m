@@ -4,7 +4,7 @@ function [x, y] = square_check(table, pos) %x --- потециальные ходы, y --- потен
 x = [0, 0]; %это контрольный ноль (это костыль)%
 y = [0, 0];
 team = table (pos(1), pos(2));
-if team == 1
+if team == 1 || 3
 opposite_team = 2;
 else opposite_team = 1;
 end
