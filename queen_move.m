@@ -6,10 +6,10 @@ function [ X,Y ] = queen_move( table, pos )
         X = [X,[pos(1)-i,pos(2)-i]];
         i=i+1;
     end
-    y = square_check(table, [pos(1)-i,pos(2)-i])
-    for k = 1:size(table,1);
+    y = square_check(table, [pos(1)-i,pos(2)-i]);
+    for k = 1:size(table,1)
         if [pos(1)-i-1,pos(2)-i-1] == y (k,:)
-            Y = Y [pos(1)-i-1,pos(2)-i-1]
+            Y = [Y ,[pos(1)-i-1,pos(2)-i-1]];
         end
     end
     i =1;
@@ -17,10 +17,10 @@ function [ X,Y ] = queen_move( table, pos )
         X = [X,[pos(1)+i,pos(2)-i]];
         i=i+1;
     end
-    y = square_check(table, [pos(1)+i,pos(2)-i])
-    for k = 1:size(table,1);
+    y = square_check(table, [pos(1)+i,pos(2)-i]);
+    for k = 1:size(table,1)
         if [pos(1)+i+1,pos(2)-i-1] == y (k,:)
-            Y = [Y ,[pos(1)+i+1,pos(2)-i-1]]
+            Y = [Y ,[pos(1)+i+1,pos(2)-i-1]];
         end
     end
     i =1;
@@ -28,10 +28,10 @@ function [ X,Y ] = queen_move( table, pos )
         X = [X,[pos(1)+i,pos(2)+i]];
         i=i+1;
     end
-     y = square_check(table, [pos(1)+i,pos(2)+i])
-    for k = 1:size(table,1);
+     y = square_check(table, [pos(1)+i,pos(2)+i]);
+    for k = 1:size(table,1)
         if [pos(1)+i+1,pos(2)+i+1] == y (k,:)
-            Y = [Y, [pos(1)+i-1,pos(2)+i+1]]
+            Y = [Y, [pos(1)+i-1,pos(2)+i+1]];
         end
     end
     i =1;
@@ -39,10 +39,10 @@ function [ X,Y ] = queen_move( table, pos )
         X = [X,[pos(1)-i,pos(2)+i]];
         i=i+1;
     end
-       y = square_check(table, [pos(1)+i,pos(2)+i])
-    for k = 1:size(table,1);
+       y = square_check(table, [pos(1)+i,pos(2)+i]);
+    for k = 1:size(table,1)
         if [pos(1)-i-1,pos(2)+i+1] == y (k,:)
-            Y = [Y [pos(1)-i-1,pos(2)+i+1]]
+            Y = [Y [pos(1)-i-1,pos(2)+i+1]];
         end
     end
     i = 1;
