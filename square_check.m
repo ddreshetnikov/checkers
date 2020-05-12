@@ -3,8 +3,9 @@ function [x, y] = square_check(table, pos) %x --- потециальные ходы, y --- потен
 
 x = [0, 0]; %это контрольный ноль (это костыль)%
 y = [0, 0];
-team = table (pos(1), pos(2));
-if team == 1 || 3
+team_1 = table (pos(1), pos(2));
+if team_1 == 1|3
+team = 1;
 opposite_team = 2;
 else opposite_team = 1;
 end
@@ -114,12 +115,12 @@ if pos(2)~=1 && pos(2)~=8
             y = [y; [pos(1)+1, pos(2)-1]];
         end
     end
-    if (table (pos(1)-1, pos(2)-1) == opposite_team) && (pos (1)~=2)&& (pos (2)~=7)
+    if (table (pos(1)-1, pos(2)+1) == opposite_team) && (pos (1)~=2)&& (pos (2)~=7)
         if (table (pos(1)-2, pos(2)+2) == 0)
             y = [y; [pos(1)-1, pos(2)+1]];
         end
     end
-    if (table (pos(1)+1, pos(2)-1) == opposite_team) && (pos (1)~=7)&& (pos (2)~=7)
+    if (table (pos(1)+1, pos(2)+1) == opposite_team) && (pos (1)~=7)&& (pos (2)~=7)
         if (table (pos(1)+2, pos(2)+2) == 0)
             y = [y; [pos(1)+1, pos(2)+1]];
         end
